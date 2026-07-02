@@ -1,0 +1,132 @@
+[
+  {
+    "id": "a7c3d3e8-7f52-4b47-aa95-213af26f31b8",
+    "name": "heading",
+    "label": "Heading",
+    "tab": "CONTENT",
+    "type": "text",
+    "default": "Frequently Asked Questions"
+  },
+  {
+    "id": "68d7f526-5d6b-4f66-8940-5b10e8fa6f93",
+    "name": "first_item_open",
+    "label": "Open first item by default",
+    "tab": "CONTENT",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "id": "6e4b4448-2d07-4f76-9472-c0e2ad08f318",
+    "name": "allow_multiple_open",
+    "label": "Allow multiple items open",
+    "tab": "CONTENT",
+    "type": "boolean",
+    "default": false
+  },
+  {
+    "id": "5ad83a2f-e3e4-4e44-8066-3212e28fbc4d",
+    "name": "items",
+    "label": "Items",
+    "tab": "CONTENT",
+    "type": "group",
+    "occurrence": {
+      "min": null,
+      "max": null,
+      "default": 4
+    },
+    "children": [
+      {
+        "id": "f4be58d7-7ac0-4e80-8c71-9b0ed6e1f692",
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "Accordion item title"
+      },
+      {
+        "id": "29ed56d3-3ee5-44f5-b7d4-1db286533613",
+        "name": "content",
+        "label": "Content",
+        "type": "richtext",
+        "default": "<p>Add your accordion content here.</p>"
+      }
+    ]
+  },
+  {
+    "id": "6f1c4c51-6380-490d-8016-b87ad8f0e7de",
+    "name": "style",
+    "label": "Style",
+    "tab": "STYLE",
+    "type": "group",
+    "children": [
+      {
+        "id": "d8f67b76-8caf-4dcd-aa47-a1f01388db1a",
+        "name": "border_color",
+        "label": "Border color",
+        "type": "color",
+        "default": {
+          "color": "#d9d9d9",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "4ba2b95b-7400-4b9e-8ca1-c7f5b730b722",
+        "name": "title_color",
+        "label": "Title color",
+        "type": "color",
+        "default": {
+          "color": "#191919",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "ea0366fc-f9dc-4205-b8f3-d9031276f32b",
+        "name": "content_color",
+        "label": "Content color",
+        "type": "color",
+        "default": {
+          "color": "#3d3d3d",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "2b913440-d4dc-4e97-b911-f3f7d0d1fef1",
+        "name": "header_background_color",
+        "label": "Header background color",
+        "type": "color",
+        "default": {
+          "color": "#ffffff",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "4df6b989-5a01-4f4f-b345-d06b08513f71",
+        "name": "content_background_color",
+        "label": "Content background color",
+        "type": "color",
+        "default": {
+          "color": "#ffffff",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "80fbeac9-bacd-4a2f-9459-0862f24bd61d",
+        "name": "icon_color",
+        "label": "Icon color",
+        "type": "color",
+        "default": {
+          "color": "#191919",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "b9fead8c-2b7b-4a5d-bf08-672d4d5899b2",
+        "name": "icon_height",
+        "label": "Icon size (height)",
+        "type": "number",
+        "display": "text",
+        "suffix": "px",
+        "default": 10
+      }
+    ]
+  }
+]

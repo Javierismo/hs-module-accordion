@@ -1,0 +1,99 @@
+{% require_css %}
+	<style>
+		{% scope_css %}
+		{% if module.style.border_color.color %}
+		.ht-accordion {
+			--ht-accordion-border-color: {{ module.style.border_color.color }};
+		}
+		{% endif %}
+	
+		{% if module.style.title_color.color %}
+		.ht-accordion {
+			--ht-accordion-title-color: {{ module.style.title_color.color }};
+		}
+		{% endif %}
+	
+		{% if module.style.content_color.color %}
+		.ht-accordion {
+			--ht-accordion-content-color: {{ module.style.content_color.color }};
+		}
+		{% endif %}
+	
+		{% if module.style.header_background_color.color %}
+		.ht-accordion {
+			--ht-accordion-header-background: {{ module.style.header_background_color.color }};
+		}
+		{% endif %}
+	
+		{% if module.style.content_background_color.color %}
+		.ht-accordion {
+			--ht-accordion-content-background: {{ module.style.content_background_color.color }};
+		}
+		{% endif %}
+	
+		{% if module.style.icon_color.color %}
+		.ht-accordion {
+			--ht-accordion-icon-color: {{ module.style.icon_color.color }};
+		}
+		{% endif %}
+	
+		{% if module.style.icon_height %}
+		.ht-accordion__icon svg  {
+			height: {{ module.style.icon_height }}px;
+		}
+		{% endif %}
+		{% end_scope_css %}
+	</style>
+	{% end_require_css %}
+	
+	{% set accordion_id = "ht-accordion-" ~ name %}
+	{% set heading_id = accordion_id ~ "-heading" %}
+	
+	<section
+		class="ht-accordion"
+		data-allow-multiple="{% if module.allow_multiple_open %}true{% else %}false{% endif %}"
+		{% if module.heading %}aria-labelledby="{{ heading_id }}"{% else %}aria-label="Accordion"{% endif %}>
+		
+		{% if module.heading %}
+		<h2 id="{{ heading_id }}" class="ht-accordion__heading">{{ module.heading }}</h2>
+		{% endif %}
+	
+		{% if module.items %}
+		<div class="ht-accordion__items" id="{{ accordion_id }}">
+			{% for item in module.items %}
+			{% set item_id = accordion_id ~ "-item-" ~ loop.index %}
+			{% set is_open = module.first_item_open and loop.first %}
+	
+			<article class="ht-accordion__item{% if is_open %} is-open{% endif %}">
+				<h3 class="ht-accordion__title">
+					<button
+						type="button"
+						class="ht-accordion__trigger"
+						id="{{ item_id }}-trigger"
+						aria-controls="{{ item_id }}-panel"
+						aria-expanded="{% if is_open %}true{% else %}false{% endif %}">
+						<span class="ht-accordion__label">{{ item.title }}</span>
+						<span class="ht-accordion__icon" aria-hidden="true">
+							<svg xmlns="http://www.w3.org/2000/svg" width="17" height="10" viewBox="0 0 17 10" fill="none">
+								<path d="M14.8286 0.38255C15.3254 -0.127503 16.1307 -0.127475 16.6274 0.38255C17.1242 0.892617 17.1242 1.71946 16.6274 2.22952L9.4319 9.61816C9.17527 9.88165 8.83622 10.0083 8.49997 9.99958C8.16382 10.0083 7.82497 9.88153 7.56841 9.61816L0.372514 2.22952C-0.124181 1.71948 -0.124161 0.892609 0.372514 0.38255C0.869275 -0.127517 1.67491 -0.127517 2.17167 0.38255L8.49997 6.88036L14.8286 0.38255Z" fill="var(--ht-accordion-icon-color)"/>
+							</svg>
+						</span>
+					</button>
+				</h3>
+	
+				<div
+					class="ht-accordion__panel"
+					id="{{ item_id }}-panel"
+					role="region"
+					aria-labelledby="{{ item_id }}-trigger"
+					{% if not is_open %}hidden{% endif %}>
+					<div class="ht-accordion__panel-inner">
+						{{ item.content }}
+					</div>
+				</div>
+			</article>
+			{% endfor %}
+		</div>
+		{% endif %}
+	</section>
+	

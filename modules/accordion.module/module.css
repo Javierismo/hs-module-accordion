@@ -1,0 +1,82 @@
+.ht-accordion {
+  --ht-accordion-border-color: #d9d9d9;
+  --ht-accordion-title-color: #191919;
+  --ht-accordion-content-color: #3d3d3d;
+  --ht-accordion-header-background: #ffffff;
+  --ht-accordion-content-background: #ffffff;
+  --ht-accordion-icon-color: #191919;
+}
+
+.ht-accordion__heading {
+  margin: 0 0 1rem;
+  color: var(--ht-accordion-title-color);
+}
+
+.ht-accordion__item {
+  border-bottom: 1px solid var(--ht-accordion-border-color);
+}
+
+.ht-accordion__item:first-child {
+  border-top: 1px solid var(--ht-accordion-border-color);
+}
+
+.ht-accordion__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 0;
+  background: var(--ht-accordion-header-background);
+  color: var(--ht-accordion-title-color);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.ht-accordion__trigger:focus-visible {
+  outline: 2px solid var(--ht-accordion-title-color);
+  outline-offset: 2px;
+}
+
+.ht-accordion__icon {
+  flex: 0 0 auto;
+  transition: transform 0.25s ease;
+}
+
+.ht-accordion__icon svg {
+  display: block;
+  width: auto;
+}
+
+.ht-accordion__item.is-open .ht-accordion__icon {
+  transform: rotate(180deg);
+}
+
+.ht-accordion__panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+  background: var(--ht-accordion-content-background);
+}
+
+.ht-accordion__panel-inner {
+  padding: 1rem;
+  color: var(--ht-accordion-content-color);
+}
+
+.ht-accordion__panel[hidden] {
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	/* Respect reduced motion preferences for accessibility */
+	.ht-accordion__panel *,
+	.ht-accordion__panel *::before,
+	.ht-accordion__panel *::after {
+		transition-duration: 0ms !important;
+		animation-duration: 0ms !important;
+	}
+}
