@@ -82,3 +82,9 @@ Collapsed view.
 Expanded panel with clear visual state and content readability.
 
 ![Open](assets/accordion-open.jpg)
+
+## Author
+
+Developed by **Javier Fuentes**
+
+- GitHub: https://github.com/Javierismo
