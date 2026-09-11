@@ -33,7 +33,7 @@ This project provides a reusable accordion for HubSpot pages that is simple for 
 1. Add the module folder to your HubSpot theme modules directory.
 2. Upload the theme or module to your HubSpot account.
 3. Open a template or page in Design Manager.
-4. Insert the module module into the layout.
+4. Insert the module into the layout.
 5. Configure content and style fields in the page editor.
 
 ## Module Structure

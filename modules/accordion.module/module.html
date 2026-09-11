@@ -18,15 +18,21 @@
 				--ht-accordion-content-color: {{ module.style.content_color.color }};
 			}
 			{% endif %}
-		
-			{% if module.style.header_background_color.color %}
-			.ht-accordion {
-				--ht-accordion-header-background: {{ module.style.header_background_color.color }};
-			}
-			{% endif %}
-		
+			
 			{% if module.style.content_background_color.color %}
 			.ht-accordion {
+				--ht-accordion-content-background: {{ module.style.content_background_color.color }};
+			}
+			{% endif %}
+			
+			{% if module.style.content_open_background_color.color %}
+			.ht-accordion__item.is-open {
+				--ht-accordion-content-open-background: {{ module.style.content_open_background_color.color }};
+			}
+			{% endif %}
+			
+			{% if module.style.content_background_color.color %}
+			.ht-accordion__item.is-open {
 				--ht-accordion-content-background: {{ module.style.content_background_color.color }};
 			}
 			{% endif %}
